@@ -8,7 +8,7 @@
 select 
     order_id,
     customer_id,
-    upper(status) as status,
+    {{ clean_text('status') }} as status,
     amount
 from {{ source('bronze','orders') }}
 
