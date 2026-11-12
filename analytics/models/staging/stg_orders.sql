@@ -1,6 +1,6 @@
 select 
     order_id,
     customer_id,
-    status,
+    upper(status) as status,
     amount
 from {{ source('bronze','orders') }}
